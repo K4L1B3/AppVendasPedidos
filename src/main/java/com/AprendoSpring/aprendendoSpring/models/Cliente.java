@@ -24,6 +24,6 @@ public class Cliente {
     private Long id;
 
     @Column(length = 20)
-    private String Nome;
+    private String nome;
 
 }

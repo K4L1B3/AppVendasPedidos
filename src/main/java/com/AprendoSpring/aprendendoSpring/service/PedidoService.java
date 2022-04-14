@@ -1,14 +1,25 @@
-package com.AprendoSpring.aprendendoSpring.service;
+// package com.AprendoSpring.aprendendoSpring.service;
 
-import com.AprendoSpring.aprendendoSpring.repositories.PedidoRepository;
+// import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+// import com.AprendoSpring.aprendendoSpring.models.Pedido;
+// import com.AprendoSpring.aprendendoSpring.repositories.PedidoRepository;
 
-@Service
-public class PedidoService {
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Service;
 
-    @Autowired
-    private PedidoRepository pedidoRepository;
+// @Service
+// public class PedidoService {
+
+//     @Autowired
+//     private PedidoRepository pedidoRepository;
+
+//     public Object save(Pedido pedido) {
+//         return pedidoRepository.save(pedido);
+//     }
+
+//     public List<Pedido> findAll() {
+//         return pedidoRepository.findAll();
+//     }
     
-}
+// }

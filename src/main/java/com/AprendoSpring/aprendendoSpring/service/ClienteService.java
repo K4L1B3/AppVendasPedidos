@@ -27,6 +27,22 @@ public class ClienteService {
 
     public Optional<Cliente> findById(Long id) {
         return clienteRepository.findById(id);
+    }
+
+    public boolean existsByNome( String nome) {
+        return clienteRepository.existsByNome(nome);
+    }
+
+    public void delete(Cliente cliente) {
+        clienteRepository.delete(cliente);
+    }
+
+    public Optional<Cliente> findByNome(String nome) {
+        return clienteRepository.findByNome(nome);
+    }
+
+    public Optional<Cliente> findByIdAndNome(Long id, String nome) {
+        return clienteRepository.findByIdAndNome(id, nome);
     }        
 
 }
