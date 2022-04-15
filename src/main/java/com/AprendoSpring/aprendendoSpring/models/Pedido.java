@@ -2,6 +2,7 @@ package com.AprendoSpring.aprendendoSpring.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;
@@ -30,14 +31,16 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "data_pedido")
+    @Column(nullable = false, name = "data_pedido")
     private LocalDate data_pedido;
 
-    @Column(length = 50, precision = 2)
+    @Column(nullable = false, length = 50, precision = 2)
     private BigDecimal total;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(nullable = false, name = "cliente_id")
     private Cliente cliente_id;
+
+    
 
 }

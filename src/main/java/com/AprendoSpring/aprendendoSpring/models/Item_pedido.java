@@ -27,16 +27,16 @@ public class Item_pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 20)
+    @Column(nullable = false, length = 20)
     private int qtd;
 
     @ManyToOne
-    @JoinColumn(name = "id_pedido")
+    @JoinColumn( nullable = false, name = "id_pedido")
     private Pedido id_Pedido;
     
     
     @ManyToOne
-    @JoinColumn(name = "id_produto")
+    @JoinColumn(nullable = false, name = "id_produto")
     private Produto id_Produto;
 
 

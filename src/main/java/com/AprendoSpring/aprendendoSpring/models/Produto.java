@@ -28,10 +28,10 @@ public class Produto {
     @Column
     private String descricao;
 
-    @Column
+    @Column (nullable = false)
     private String nome;
 
-    @Column(length = 50, precision = 2)
+    @Column(nullable = false, length = 50, precision = 2)
     private BigDecimal valor;
 
 
