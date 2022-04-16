@@ -33,14 +33,14 @@ public class PedidoController {
 
         //CREATE AND SAVE
     @PostMapping("/abrirPedido")
-    public Long savePedido(PedidoDTO pedidoDTO){
-        Pedido pedido = pedidoService.save(pedidoDTO);
-		return pedido.getId();
+    public ResponseEntity<Object> savePedido(PedidoDTO pedidoDTO){
+        // Pedido pedido = pedidoService.save(pedidoDTO);
+		// return pedido.getId();
 
-        // var pedido = new Pedido();
-        // BeanUtils.copyProperties( pedidoDTO, pedido);
-        // pedido.setData_pedido(LocalDate.now(ZoneId.of("UTC")));
-        // return ResponseEntity.status(HttpStatus.CREATED).body(pedidoService.save(pedido));
+        var pedido = new Pedido();
+        BeanUtils.copyProperties( pedidoDTO, pedido);
+        pedido.setData_pedido(LocalDate.now(ZoneId.of("UTC")));
+        return ResponseEntity.status(HttpStatus.CREATED).body(pedidoService.save(pedido));
     }
 
     

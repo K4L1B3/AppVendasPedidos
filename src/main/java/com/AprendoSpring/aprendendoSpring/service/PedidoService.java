@@ -13,7 +13,9 @@ import com.AprendoSpring.aprendendoSpring.exception.PedidoServiceExcepetion;
 import com.AprendoSpring.aprendendoSpring.models.Cliente;
 import com.AprendoSpring.aprendendoSpring.models.Item_pedido;
 import com.AprendoSpring.aprendendoSpring.models.Pedido;
+import com.AprendoSpring.aprendendoSpring.models.Produto;
 import com.AprendoSpring.aprendendoSpring.repositories.ClienteRepository;
+import com.AprendoSpring.aprendendoSpring.repositories.Item_pedidoRepository;
 import com.AprendoSpring.aprendendoSpring.repositories.PedidoRepository;
 import com.AprendoSpring.aprendendoSpring.repositories.ProdutoRepository;
 
@@ -32,50 +34,67 @@ public class PedidoService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    //SALVANDO PEDIDO
-    public Pedido save(PedidoDTO pedidoDTO) {
+    @Autowired
+    private Item_pedidoRepository item_pedidoRepository;
+
+    // @Transactional
+    // public Pedido save(Pedido pedido) {
+    //     return pedidoRepository.save(pedido);
+    // }
+
+
+    // //SALVANDO PEDIDO
+    // @Transactional
+    // public Pedido save(PedidoDTO pedidoDTO) {
        
-        Long idCliente = pedidoDTO.getClienteId();
-        Cliente cliente = clienteRepository
-            .findById(idCliente)
-            .orElseThrow(() -> new PedidoServiceExcepetion("ERRO: Código de cliente inválido"){
+    //     Long idCliente = pedidoDTO.getClienteId();
+    //     Cliente cliente = clienteRepository
+    //         .findById(idCliente)
+    //         .orElseThrow(() -> new PedidoServiceExcepetion("ERRO: Código de cliente inválido"){
 
-        });
+    //     });
 
-        Pedido pedido = new Pedido();
-        pedido.setTotal(pedidoDTO.getTotal());
-        pedido.setData_pedido(LocalDate.now());
-        pedido.setCliente_id(cliente);
-       return null;
-    }
+    //     Pedido pedido = new Pedido();
+    //     pedido.setTotal(pedidoDTO.getTotal());
+    //     pedido.setData_pedido(LocalDate.now());
+    //     pedido.setCliente_id(cliente);
+       
+    //     List<Item_pedido> itemsPedidoList = converterItems(pedido, pedidoDTO.getItems());
+    //     pedidoRepository.save(pedido);
+    //     item_pedidoRepository.saveAll(itemsPedidoList);
+    //     return pedido;
+    // }
 
-    //CONVERTER ITEMS EM ITEMS PEDIDO
-    private List<Item_pedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items){
-        if(items.isEmpty()){
-            throw new PedidoServiceExcepetion("Não é possível realizar um pedido sem items!");
-        }
+    // //CONVERTER ITEMS EM ITEMS PEDIDO
+    // private List<Item_pedido> converterItems(Pedido pedido, List<ItemPedidoDTO> items){
+    //     if(items.isEmpty()){
+    //         throw new PedidoServiceExcepetion("Não é possível realizar um pedido sem items!");
+    //     }
         
-        return items
-        .stream()
-        .map(pedidoDTO -> {
-            Long produtoId = pedidoDTO.getProdutoId();
-            produtoRepository
-                .findById(produtoId)
-                .orElseThrow(
-                    () -> new PedidoServiceExcepetion(
-                        "ERRO: Código de cliente inválido"
-                        ));
+    //     return items
+    //     .stream()
+    //     .map(pedidoDTO -> {
+    //         Long produtoId = pedidoDTO.getProdutoId();
+    //         Produto produto = produtoRepository
+    //             .findById(produtoId)
+    //             .orElseThrow(
+    //                 () -> new PedidoServiceExcepetion(
+    //                     "ERRO: Código de cliente inválido"
+    //                     ));
        
 
-            Item_pedido itemPedido = new Item_pedido();
-            itemPedido.setQtd(pedidoDTO);
-            itemPedido.setId_Pedido(pedido);
-            return itemPedido;
-        }).collect(Collectors.toList());
+    //         Item_pedido itemPedido = new Item_pedido();
+    //         itemPedido.setQtd(pedidoDTO.getQtd());
+    //         itemPedido.setId_Pedido(pedido);
+    //         itemPedido.setId_Produto(produto);
+    //         return itemPedido;
+    //     }).collect(Collectors.toList());
+    // }
+
+
+    public Object save(Pedido pedido){
+        return pedidoRepository.save(pedido);
     }
-
-
-
 
     public List<Pedido> findAll() {
         return pedidoRepository.findAll();

@@ -7,7 +7,9 @@ import com.AprendoSpring.aprendendoSpring.models.Produto;
 import com.AprendoSpring.aprendendoSpring.repositories.ProdutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProdutoService {
 
 
