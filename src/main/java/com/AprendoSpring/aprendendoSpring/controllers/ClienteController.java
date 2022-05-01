@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.validation.Valid;
 
 import com.AprendoSpring.aprendendoSpring.models.Cliente;
 import com.AprendoSpring.aprendendoSpring.service.ClienteService;
@@ -32,7 +33,7 @@ public class ClienteController {
 
     // SAVE AND CREATE
     @PostMapping("/create")
-    public ResponseEntity<Object> save(@RequestBody Cliente cliente){
+    public ResponseEntity<Object> save(@RequestBody @Valid Cliente cliente){
         if(clienteService.existsByNome(cliente.getNome())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: Esse nome já foi cadastrado");
         }

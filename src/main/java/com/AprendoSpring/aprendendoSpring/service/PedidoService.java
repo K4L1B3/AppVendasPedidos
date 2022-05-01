@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 
 import com.AprendoSpring.aprendendoSpring.dto.ItemPedidoDTO;
 import com.AprendoSpring.aprendendoSpring.dto.PedidoDTO;
-import com.AprendoSpring.aprendendoSpring.exception.PedidoServiceExcepetion;
+// import com.AprendoSpring.aprendendoSpring.exception.PedidoServiceExcepetion;
 import com.AprendoSpring.aprendendoSpring.models.Cliente;
 import com.AprendoSpring.aprendendoSpring.models.Item_pedido;
 import com.AprendoSpring.aprendendoSpring.models.Pedido;
@@ -37,10 +37,10 @@ public class PedidoService {
     @Autowired
     private Item_pedidoRepository item_pedidoRepository;
 
-    // @Transactional
-    // public Pedido save(Pedido pedido) {
-    //     return pedidoRepository.save(pedido);
-    // }
+    @Transactional
+    public Pedido save(Pedido pedido) {
+        return pedidoRepository.save(pedido);
+    }
 
 
     // //SALVANDO PEDIDO
@@ -79,7 +79,7 @@ public class PedidoService {
     //             .findById(produtoId)
     //             .orElseThrow(
     //                 () -> new PedidoServiceExcepetion(
-    //                     "ERRO: Código de cliente inválido"
+    //                     "ERRO - Código de cliente inválido: " + produtoId
     //                     ));
        
 
@@ -91,10 +91,6 @@ public class PedidoService {
     //     }).collect(Collectors.toList());
     // }
 
-
-    public Object save(Pedido pedido){
-        return pedidoRepository.save(pedido);
-    }
 
     public List<Pedido> findAll() {
         return pedidoRepository.findAll();

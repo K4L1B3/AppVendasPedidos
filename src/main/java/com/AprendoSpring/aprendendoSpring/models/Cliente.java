@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ public class Cliente {
     private Long id;
 
     @Column(nullable = false, length = 20)
+    @NotEmpty(message = "O campo nome é obrigatório.")
     private String nome;
 
 }

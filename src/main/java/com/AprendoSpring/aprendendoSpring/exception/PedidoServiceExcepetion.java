@@ -1,10 +1,10 @@
-package com.AprendoSpring.aprendendoSpring.exception;
+// package com.AprendoSpring.aprendendoSpring.exception;
 
-public class PedidoServiceExcepetion extends RuntimeException {
+// public class PedidoServiceExcepetion extends RuntimeException {
 
-    public PedidoServiceExcepetion (String menssage){
-       super(menssage); 
+//     public PedidoServiceExcepetion (String menssage){
+//        super(menssage); 
     
-    }
+//     }
     
-}
+// }
