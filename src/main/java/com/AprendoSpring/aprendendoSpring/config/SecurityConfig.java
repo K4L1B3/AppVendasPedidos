@@ -69,7 +69,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         //cria um formulário de login do spring security ou você pode criar
                         // o seu proprio formulário de login e colocar uma caminho para ele
                         // passando o path dentro do parâmetro em uma pasta que esteja dentro
-                        // de resources > static ou templates
+                        // de resources > static ou templates ficaria algo como ("/meu-login.html")
+                        // esse formulário deve ser submetido apenas com o método POST tendo dois 
+                        // campos de inputs por ex "user e password" com atributo names 
+
+                        /*
+                            <form method="post">
+                                <input type="text" name="username">
+                                <input type="secret" name="password">
+                                <button type="submit"....
+                            </form>
+                        */
                             .formLogin() 
     }
 
