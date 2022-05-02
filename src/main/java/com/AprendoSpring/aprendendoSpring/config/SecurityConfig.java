@@ -1,5 +1,8 @@
 package com.AprendoSpring.aprendendoSpring.config;
 
+import com.AprendoSpring.aprendendoSpring.service.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,9 +11,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import ch.qos.logback.core.encoder.Encoder;
+
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
     
+    @Autowired
+    private UserService userService;
+
 
     //Criptografar e descriptografar a senha do usuário
     @Bean 
@@ -45,11 +53,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     //Maneger Builder
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-       auth.inMemoryAuthentication()
-            .passwordEncoder(passwordEncoder())
-            .withUser("fulano")
-            .password(passwordEncoder().encode("12345678"))
-            .roles("USER");
+        auth.userDetailsService(userService)    
+            .passwordEncoder(passwordEncoder());   
+    
+
+
+
+    //DEFINIR EM MEMÓRIA
+    //    auth.inMemoryAuthentication()
+    //         .passwordEncoder(passwordEncoder())
+    //         .withUser("fulano")
+    //         .password(passwordEncoder().encode("12345678"))
+    //         .roles("USER", "ADMIN");
     }
 
     //Http security
@@ -64,7 +79,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 // nisso só seriam permitido pessoas que tivessem a role "USER" podendo 
                 // ser usado também .hasAuthority("MANTER USUARIO") 
                 // também existe o permitAll() que não precisa estar autenticado
-                    .authenticated()
+                    .hasAnyRole("USER", "ADMIN")
+                .antMatchers("/produto/**")
+                    .hasRole("ADMIN")
+                .antMatchers("/pedidos/**")
+                    .hasAnyRole("USER", "ADMIN")
                         .and()
                         //cria um formulário de login do spring security ou você pode criar
                         // o seu proprio formulário de login e colocar uma caminho para ele
@@ -80,7 +99,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                                 <button type="submit"....
                             </form>
                         */
-                            .formLogin() 
+                            // .formLogin();
+                            //Para utilizar via insominia
+                            .httpBasic();
     }
 
 
