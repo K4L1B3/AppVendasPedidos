@@ -8,7 +8,7 @@ import java.util.Optional;
 
 import com.AprendoSpring.aprendendoSpring.dto.PedidoDTO;
 import com.AprendoSpring.aprendendoSpring.models.Pedido;
-import com.AprendoSpring.aprendendoSpring.service.PedidoService;
+import com.AprendoSpring.aprendendoSpring.services.PedidoService;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.BeanUtils;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pedidos")
+@RequestMapping("/api/pedido")
 public class PedidoController {
     
     @Autowired

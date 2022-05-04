@@ -1,4 +1,4 @@
-package com.AprendoSpring.aprendendoSpring.service;
+package com.AprendoSpring.aprendendoSpring.services;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.AprendoSpring.aprendendoSpring.models.Produto;
-import com.AprendoSpring.aprendendoSpring.service.ProdutoService;
+import com.AprendoSpring.aprendendoSpring.services.ProdutoService;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.BeanUtils;
@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("/api/produto")
 public class ProdutoController {
     
 

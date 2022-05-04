@@ -1,9 +1,11 @@
 package com.AprendoSpring.aprendendoSpring.config;
 
-import com.AprendoSpring.aprendendoSpring.service.UserService;
+import com.AprendoSpring.aprendendoSpring.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -16,6 +18,7 @@ import ch.qos.logback.core.encoder.Encoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
     
+    @Lazy
     @Autowired
     private UserService userService;
 
@@ -74,16 +77,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .authorizeRequests()
             //definir quem acessa oque atrásves do parâmetro antMatchers
             //http://localhost:8080/cliente/create
-                .antMatchers("/cliente/**")
+                .antMatchers("/api/cliente/**")
                 // tem que estar autenticado você também pode adicionar: .hasRole("USER")
                 // nisso só seriam permitido pessoas que tivessem a role "USER" podendo 
                 // ser usado também .hasAuthority("MANTER USUARIO") 
                 // também existe o permitAll() que não precisa estar autenticado
                     .hasAnyRole("USER", "ADMIN")
-                .antMatchers("/produto/**")
+                .antMatchers("/api/produto/**")
                     .hasRole("ADMIN")
-                .antMatchers("/pedidos/**")
+                .antMatchers("/api/pedidos/**")
                     .hasAnyRole("USER", "ADMIN")
+                .antMatchers( HttpMethod.POST, "/api/usuario/**")
+                    .permitAll()
+                .anyRequest().authenticated()
                         .and()
                         //cria um formulário de login do spring security ou você pode criar
                         // o seu proprio formulário de login e colocar uma caminho para ele

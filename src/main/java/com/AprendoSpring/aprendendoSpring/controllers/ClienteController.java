@@ -7,7 +7,7 @@ import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.validation.Valid;
 
 import com.AprendoSpring.aprendendoSpring.models.Cliente;
-import com.AprendoSpring.aprendendoSpring.service.ClienteService;
+import com.AprendoSpring.aprendendoSpring.services.ClienteService;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.BeanUtils;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/api/cliente")
 public class ClienteController {
 
     @Autowired
