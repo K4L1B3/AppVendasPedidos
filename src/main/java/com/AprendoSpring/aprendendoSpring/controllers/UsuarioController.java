@@ -27,7 +27,7 @@ public class UsuarioController {
 
 
 
-    @PostMapping("/salvar")
+    @PostMapping("/singup")
     public ResponseEntity<Object> salvarUser(@RequestBody @Valid Usuario usuario){
         //Criptografar senha do usuário e salva-la no usuário
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());

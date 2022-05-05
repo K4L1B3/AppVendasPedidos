@@ -53,22 +53,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     }
 
 
-    //Maneger Builder
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService)    
-            .passwordEncoder(passwordEncoder());   
+    //Maneger Builder configura o usuario para dentro do contexto do spring security
+    // @Override
+    // protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    //     auth.userDetailsService(userService)    
+    //         .passwordEncoder(passwordEncoder());   
     
 
 
 
-    //DEFINIR EM MEMÓRIA
-    //    auth.inMemoryAuthentication()
-    //         .passwordEncoder(passwordEncoder())
-    //         .withUser("fulano")
-    //         .password(passwordEncoder().encode("12345678"))
-    //         .roles("USER", "ADMIN");
-    }
+    // //DEFINIR USER EM MEMÓRIA
+    // //    auth.inMemoryAuthentication()
+    // //         .passwordEncoder(passwordEncoder())
+    // //         .withUser("fulano")
+    // //         .password(passwordEncoder().encode("12345678"))
+    // //         .roles("USER", "ADMIN");
+    // }
 
     //Http security
     @Override
@@ -89,6 +89,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                     .hasAnyRole("USER", "ADMIN")
                 .antMatchers( HttpMethod.POST, "/api/usuario/**")
                     .permitAll()
+                // .antMatchers("/api/home/**")
+                //     .permitAll()
                 .anyRequest().authenticated()
                         .and()
                         //cria um formulário de login do spring security ou você pode criar
