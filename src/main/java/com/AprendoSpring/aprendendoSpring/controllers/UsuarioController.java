@@ -2,6 +2,7 @@ package com.AprendoSpring.aprendendoSpring.controllers;
 
 import javax.validation.Valid;
 
+import com.AprendoSpring.aprendendoSpring.dto.CredenciaisDTO;
 import com.AprendoSpring.aprendendoSpring.models.Usuario;
 import com.AprendoSpring.aprendendoSpring.repositories.UsuarioRepository;
 import com.AprendoSpring.aprendendoSpring.services.UserService;
@@ -33,6 +34,12 @@ public class UsuarioController {
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(usuario));
+    }
+
+
+    @PostMapping("/login")
+    public TokenDTO autenticar(@RequestBody CredenciaisDTO credenciaisDTO){
+        
     }
 
 

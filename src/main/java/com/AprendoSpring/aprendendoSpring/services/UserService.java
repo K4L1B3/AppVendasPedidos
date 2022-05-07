@@ -31,7 +31,7 @@ public class UserService implements UserDetailsService {
         return usuarioRepository.save(usuario);
     }
 
-    //Carregar o usuário para da base de dados
+    //Carregar o usuário para da base de dados através do login dele
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 

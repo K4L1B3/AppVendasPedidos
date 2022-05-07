@@ -1,5 +1,7 @@
 package com.AprendoSpring.aprendendoSpring.config;
 
+import com.AprendoSpring.aprendendoSpring.security.jwt.JwtAuthFilter;
+import com.AprendoSpring.aprendendoSpring.security.jwt.JwtService;
 import com.AprendoSpring.aprendendoSpring.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +12,11 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import ch.qos.logback.core.encoder.Encoder;
 
@@ -21,6 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Lazy
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private JwtService jwtService;
 
 
     //Criptografar e descriptografar a senha do usuário
@@ -52,6 +60,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         
     }
 
+    //implementando o método para interceptar as requisições
+    @Bean
+    public OncePerRequestFilter jwtFilter(){
+        return new JwtAuthFilter(jwtService, userService);
+    }
 
     //Maneger Builder configura o usuario para dentro do contexto do spring security
     // @Override
@@ -69,6 +82,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     // //         .password(passwordEncoder().encode("12345678"))
     // //         .roles("USER", "ADMIN");
     // }
+
+
 
     //Http security
     @Override
@@ -109,7 +124,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         */
                             // .formLogin();
                             //Para utilizar via insominia
-                            .httpBasic();
+                            .sessionManagement()
+                            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                        .and()
+                            .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
 
