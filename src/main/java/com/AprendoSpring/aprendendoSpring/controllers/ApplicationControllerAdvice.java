@@ -3,7 +3,7 @@ package com.AprendoSpring.aprendendoSpring.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.AprendoSpring.aprendendoSpring.dto.ApiErros;
+import com.AprendoSpring.aprendendoSpring.exception.ApiErros;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;

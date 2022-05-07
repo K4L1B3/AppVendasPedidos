@@ -1,4 +1,4 @@
-package com.AprendoSpring.aprendendoSpring.dto;
+package com.AprendoSpring.aprendendoSpring.exception;
 
 import java.util.Arrays;
 import java.util.List;

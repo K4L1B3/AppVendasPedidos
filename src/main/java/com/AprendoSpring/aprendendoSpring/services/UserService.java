@@ -4,6 +4,7 @@ import java.net.PasswordAuthentication;
 
 import javax.transaction.Transactional;
 
+import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
 import com.AprendoSpring.aprendendoSpring.models.Usuario;
 import com.AprendoSpring.aprendendoSpring.repositories.UsuarioRepository;
 
@@ -29,6 +30,16 @@ public class UserService implements UserDetailsService {
     @Transactional
     public Object save(Usuario usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    public UserDetails autenticar(Usuario usuario) {
+        UserDetails user = loadUserByUsername(usuario.getLogin());
+        boolean senhasBatem = encoder.matches(usuario.getSenha(), user.getPassword());
+        if (senhasBatem) {
+            return user;
+        } else {
+            throw new SenhaInvalidaException();
+        }
     }
 
     //Carregar o usuário para da base de dados através do login dele
