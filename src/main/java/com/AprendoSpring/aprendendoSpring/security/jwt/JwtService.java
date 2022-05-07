@@ -91,22 +91,22 @@ public class JwtService {
 
     // Para testar se o JWT está funcionando normalmente contendo o 
     // header, payload e a chave de assinatura
-    public static void main(String[] args){
-        ConfigurableApplicationContext contexto = SpringApplication.run(AprendendoSpringApplication.class);
-        JwtService service = contexto.getBean(JwtService.class);
-        Usuario usuario = Usuario.builder().login("Fulano").build();
-        String token = service.gerarToken(usuario);
-        System.out.println(token);
+    // public static void main(String[] args){
+    //     ConfigurableApplicationContext contexto = SpringApplication.run(AprendendoSpringApplication.class);
+    //     JwtService service = contexto.getBean(JwtService.class);
+    //     Usuario usuario = Usuario.builder().login("Fulano").build();
+    //     String token = service.gerarToken(usuario);
+    //     System.out.println(token);
 
-        //Testando para ver se o token está valido
-        boolean isTokenValido = service.tokenValido(token);
-        System.out.println("O token está valido? " + isTokenValido);
+    //     //Testando para ver se o token está valido
+    //     boolean isTokenValido = service.tokenValido(token);
+    //     System.out.println("O token está valido? " + isTokenValido);
 
-        //Testando para ver qual é o usuário que está logado
-        System.out.println(service.obterLoginUsuario(token));
+    //     //Testando para ver qual é o usuário que está logado
+    //     System.out.println(service.obterLoginUsuario(token));
 
 
 
-    }
+    // }
 
 }

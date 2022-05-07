@@ -5,7 +5,6 @@ import javax.validation.Valid;
 import com.AprendoSpring.aprendendoSpring.dto.CredenciaisDTO;
 import com.AprendoSpring.aprendendoSpring.dto.TokenDTO;
 import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
-import com.AprendoSpring.aprendendoSpring.exception.senhaInvalidaException;
 import com.AprendoSpring.aprendendoSpring.models.Usuario;
 import com.AprendoSpring.aprendendoSpring.repositories.UsuarioRepository;
 import com.AprendoSpring.aprendendoSpring.security.jwt.JwtService;
@@ -65,4 +64,5 @@ public class UsuarioController {
     }
 
 
+    }
 }

@@ -35,7 +35,7 @@ public class Usuario {
     @NotEmpty (message = "campo.senha.obrigatorio")
     private String senha;
 
-    @Column
+    @Column (name = "adm")
     private boolean admin;
 
 }
