@@ -55,7 +55,8 @@ public class JwtAuthFilter extends OncePerRequestFilter{
                 //Aqui carregarei o usuário com todas as suas permissões
                 UserDetails usuario =  userService.loadUserByUsername(loginUsuario);
                 // Colocando o usuario dentro do contexto do spring security
-                UsernamePasswordAuthenticationToken user = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
+                UsernamePasswordAuthenticationToken user = 
+                    new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
                 // Indica ao spring security que isso se trata de uma autenticação web
                 user.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(user);
@@ -65,11 +66,5 @@ public class JwtAuthFilter extends OncePerRequestFilter{
             filterChain.doFilter(request, response);
 
         }
-        
-
-     
-
     }
-    
-    
 }

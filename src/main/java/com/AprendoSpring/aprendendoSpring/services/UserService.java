@@ -55,6 +55,7 @@ public class UserService implements UserDetailsService {
             .builder()
             .username(usuario.getLogin())
             .password(usuario.getSenha())
+            .roles(roles)
             .build();
 
     }

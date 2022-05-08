@@ -44,6 +44,7 @@ public class UsuarioController {
         //Criptografar senha do usuário e salva-la no usuário
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);
+        System.out.println(senhaCriptografada);
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(usuario));
     }
 
@@ -62,7 +63,5 @@ public class UsuarioController {
         } catch (UsernameNotFoundException | SenhaInvalidaException e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage());
     }
-
-
     }
 }
