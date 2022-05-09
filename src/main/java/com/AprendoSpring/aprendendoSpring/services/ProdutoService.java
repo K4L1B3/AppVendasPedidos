@@ -21,7 +21,7 @@ public class ProdutoService {
         return produtoRepository.existsByNome(nome);
     }
 
-    public Object save(Produto produto) {
+    public Produto save(Produto produto) {
         return produtoRepository.save(produto);
     }
 

@@ -39,8 +39,8 @@ public class UsuarioController {
 
 
     //Método de criação de usuário
-    @PostMapping("/singup")
-    public ResponseEntity<Object> salvarUser(@RequestBody @Valid Usuario usuario){
+    @PostMapping("/signup")
+    public ResponseEntity<Usuario> salvarUser(@RequestBody @Valid Usuario usuario){
         //Criptografar senha do usuário e salva-la no usuário
         String senhaCriptografada = passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(senhaCriptografada);

@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService {
 
     //SALVAR usuário
     @Transactional
-    public Object save(Usuario usuario){
+    public Usuario save(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
 
