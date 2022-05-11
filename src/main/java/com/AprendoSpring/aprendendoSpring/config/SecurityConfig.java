@@ -92,23 +92,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             .authorizeRequests()
             //definir quem acessa oque atrásves do parâmetro antMatchers
             //http://localhost:8080/cliente/create
+                .antMatchers( HttpMethod.POST, "/api/usuario/**")
+                    .permitAll()
                 .antMatchers("/api/cliente/**")
-                // tem que estar autenticado você também pode adicionar: .hasRole("USER")
-                // nisso só seriam permitido pessoas que tivessem a role "USER" podendo 
-                // ser usado também .hasAuthority("MANTER USUARIO") 
-                // também existe o permitAll() que não precisa estar autenticado
                     .hasAnyRole("USER", "ADMIN")
                 .antMatchers("/api/produto/**")
                     .hasRole("ADMIN")
                 .antMatchers("/api/pedidos/**")
                     .hasAnyRole("USER", "ADMIN")
-                .antMatchers( HttpMethod.POST, "/api/usuario/**")
-                    .permitAll()
-                // .antMatchers("/api/home/**")
-                //     .permitAll()
                 .anyRequest().authenticated()
-                        .and()
-                        //cria um formulário de login do spring security ou você pode criar
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
+                    // o has role fala que tem que estar autenticado você também pode adicionar: .hasRole("USER")
+                    // nisso só seriam permitido pessoas que tivessem a role "USER" podendo 
+                    // ser usado também .hasAuthority("MANTER USUARIO") 
+                    // também existe o permitAll() que não precisa estar autenticado
+
+                    //cria um formulário de login do spring security ou você pode criar
                         // o seu proprio formulário de login e colocar uma caminho para ele
                         // passando o path dentro do parâmetro em uma pasta que esteja dentro
                         // de resources > static ou templates ficaria algo como ("/meu-login.html")
@@ -124,10 +127,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         */
                             // .formLogin();
                             //Para utilizar via insominia
-                            .sessionManagement()
-                            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                        .and()
-                            .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
 
