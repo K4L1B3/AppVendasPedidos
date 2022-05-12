@@ -1,4 +1,4 @@
-package com.AprendoSpring.aprendendoSpring.controllers;
+package com.AprendoSpring.aprendendoSpring.rest.controllers;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

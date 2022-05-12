@@ -1,4 +1,4 @@
-package com.AprendoSpring.aprendendoSpring.dto;
+package com.AprendoSpring.aprendendoSpring.rest.dto;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,6 +1,8 @@
-package com.AprendoSpring.aprendendoSpring.models;
+package com.domains.models;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.annotation.Generated;
 import javax.persistence.Column;
@@ -12,33 +14,33 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ManyToAny;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "item_pedido")
-public class Item_pedido {
+@Table(name = "pedido")
+public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, length = 20)
-    private int qtd;
+    @Column(nullable = false, name = "data_pedido")
+    private LocalDate data_pedido;
+
+    @Column(nullable = false, length = 50, precision = 2)
+    private BigDecimal total;
 
     @ManyToOne
-    @JoinColumn( nullable = false, name = "id_pedido")
-    private Pedido id_Pedido;
-    
-    
-    @ManyToOne
-    @JoinColumn(nullable = false, name = "id_produto")
-    private Produto id_Produto;
-
+    @JoinColumn(nullable = false, name = "cliente_id")
+    private Cliente cliente_id;
 
     
+
 }

@@ -1,4 +1,4 @@
-package com.AprendoSpring.aprendendoSpring.controllers;
+package com.AprendoSpring.aprendendoSpring.rest.controllers;
 
 import java.util.List;
 import java.util.Optional;
