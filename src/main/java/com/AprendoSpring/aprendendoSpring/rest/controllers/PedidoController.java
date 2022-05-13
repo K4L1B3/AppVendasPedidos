@@ -3,9 +3,9 @@ package com.AprendoSpring.aprendendoSpring.rest.controllers;
 import java.time.LocalDate;
 import java.time.ZoneId;
 
+import com.AprendoSpring.aprendendoSpring.domains.models.Pedido;
 import com.AprendoSpring.aprendendoSpring.rest.dto.PedidoDTO;
 import com.AprendoSpring.aprendendoSpring.services.PedidoService;
-import com.domains.models.Pedido;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

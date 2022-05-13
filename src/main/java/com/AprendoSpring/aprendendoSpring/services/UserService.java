@@ -3,9 +3,9 @@ package com.AprendoSpring.aprendendoSpring.services;
 
 import javax.transaction.Transactional;
 
+import com.AprendoSpring.aprendendoSpring.domains.models.Usuario;
+import com.AprendoSpring.aprendendoSpring.domains.repositories.UsuarioRepository;
 import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
-import com.domains.models.Usuario;
-import com.domains.repositories.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;

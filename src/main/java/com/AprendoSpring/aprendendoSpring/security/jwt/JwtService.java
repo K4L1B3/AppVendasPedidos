@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-import com.domains.models.Usuario;
+import com.AprendoSpring.aprendendoSpring.domains.models.Usuario;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

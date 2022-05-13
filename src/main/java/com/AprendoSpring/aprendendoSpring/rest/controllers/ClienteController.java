@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import com.AprendoSpring.aprendendoSpring.domains.models.Cliente;
 import com.AprendoSpring.aprendendoSpring.services.ClienteService;
-import com.domains.models.Cliente;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

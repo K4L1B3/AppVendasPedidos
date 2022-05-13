@@ -5,11 +5,8 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-import com.domains.models.Pedido;
-// import com.domains.repositories.ClienteRepository;
-// import com.domains.repositories.Item_pedidoRepository;
-import com.domains.repositories.PedidoRepository;
-// import com.domains.repositories.ProdutoRepository;
+import com.AprendoSpring.aprendendoSpring.domains.models.Pedido;
+import com.AprendoSpring.aprendendoSpring.domains.repositories.PedidoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

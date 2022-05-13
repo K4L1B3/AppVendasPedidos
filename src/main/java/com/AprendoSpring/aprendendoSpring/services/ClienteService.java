@@ -3,8 +3,8 @@ package com.AprendoSpring.aprendendoSpring.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.domains.models.Cliente;
-import com.domains.repositories.ClienteRepository;
+import com.AprendoSpring.aprendendoSpring.domains.models.Cliente;
+import com.AprendoSpring.aprendendoSpring.domains.repositories.ClienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +15,7 @@ public class ClienteService {
 
     @Autowired
     private ClienteRepository clienteRepository;
+    
 
     public Cliente save(Cliente cliente){
         return clienteRepository.save(cliente);

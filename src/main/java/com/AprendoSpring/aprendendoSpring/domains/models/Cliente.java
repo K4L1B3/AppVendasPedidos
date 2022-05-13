@@ -1,6 +1,4 @@
-package com.domains.models;
-
-import java.math.BigDecimal;
+package com.AprendoSpring.aprendendoSpring.domains.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,21 +16,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "produto")
-public class Produto {
-
+@Table (name = "cliente")
+public class Cliente {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
-    private String descricao;
-
-    @Column (nullable = false)
+    @Column(nullable = false, length = 20)
+    @NotEmpty(message = "O campo nome é obrigatório.")
     private String nome;
-
-    @Column(nullable = false, length = 50, precision = 2)
-    private BigDecimal valor;
-
 
 }

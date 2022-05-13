@@ -1,4 +1,6 @@
-package com.domains.models;
+package com.AprendoSpring.aprendendoSpring.domains.models;
+
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,35 +8,30 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
-@Table(name = "usuario")
-public class Usuario {
-    
+@Table(name = "produto")
+public class Produto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
     @Column
-    @NotEmpty (message = "campo.login.obrigatorio")
-    private String login;
+    private String descricao;
 
-    @Column 
-    @NotEmpty (message = "campo.senha.obrigatorio")
-    private String senha;
+    @Column (nullable = false)
+    private String nome;
 
-    @Column (name = "adm")
-    private boolean admin;
+    @Column(nullable = false, length = 50, precision = 2)
+    private BigDecimal valor;
+
 
 }

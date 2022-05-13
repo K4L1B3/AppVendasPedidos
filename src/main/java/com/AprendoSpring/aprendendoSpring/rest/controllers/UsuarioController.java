@@ -2,12 +2,12 @@ package com.AprendoSpring.aprendendoSpring.rest.controllers;
 
 import javax.validation.Valid;
 
+import com.AprendoSpring.aprendendoSpring.domains.models.Usuario;
 import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
 import com.AprendoSpring.aprendendoSpring.rest.dto.CredenciaisDTO;
 import com.AprendoSpring.aprendendoSpring.rest.dto.TokenDTO;
 import com.AprendoSpring.aprendendoSpring.security.jwt.JwtService;
 import com.AprendoSpring.aprendendoSpring.services.UserService;
-import com.domains.models.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

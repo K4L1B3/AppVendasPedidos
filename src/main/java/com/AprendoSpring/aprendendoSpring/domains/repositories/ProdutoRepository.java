@@ -1,8 +1,8 @@
-package com.domains.repositories;
+package com.AprendoSpring.aprendendoSpring.domains.repositories;
 
 import java.util.Optional;
 
-import com.domains.models.Produto;
+import com.AprendoSpring.aprendendoSpring.domains.models.Produto;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
