@@ -1,10 +1,10 @@
-package com.AprendoSpring.aprendendoSpring.repositories;
+package com.domains.repositories;
 
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-import com.AprendoSpring.aprendendoSpring.models.Usuario;
+import com.domains.models.Usuario;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

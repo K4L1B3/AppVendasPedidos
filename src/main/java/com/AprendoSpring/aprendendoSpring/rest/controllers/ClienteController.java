@@ -3,13 +3,11 @@ package com.AprendoSpring.aprendendoSpring.rest.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.validation.Valid;
 
-import com.AprendoSpring.aprendendoSpring.models.Cliente;
 import com.AprendoSpring.aprendendoSpring.services.ClienteService;
+import com.domains.models.Cliente;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,15 +1,13 @@
 package com.AprendoSpring.aprendendoSpring.services;
 
-import java.net.PasswordAuthentication;
 
 import javax.transaction.Transactional;
 
 import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
-import com.AprendoSpring.aprendendoSpring.models.Usuario;
-import com.AprendoSpring.aprendendoSpring.repositories.UsuarioRepository;
+import com.domains.models.Usuario;
+import com.domains.repositories.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

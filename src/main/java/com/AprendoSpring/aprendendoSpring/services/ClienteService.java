@@ -3,11 +3,10 @@ package com.AprendoSpring.aprendendoSpring.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.AprendoSpring.aprendendoSpring.models.Cliente;
-import com.AprendoSpring.aprendendoSpring.repositories.ClienteRepository;
+import com.domains.models.Cliente;
+import com.domains.repositories.ClienteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service

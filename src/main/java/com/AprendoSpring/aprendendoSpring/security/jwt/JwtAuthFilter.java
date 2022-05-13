@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.AprendoSpring.aprendendoSpring.services.UserService;
 
-import org.apache.catalina.User;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;

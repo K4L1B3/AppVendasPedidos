@@ -1,14 +1,13 @@
-package com.AprendoSpring.aprendendoSpring.controllers;
+package com.AprendoSpring.aprendendoSpring.rest.controllers;
 
 import javax.validation.Valid;
 
-import com.AprendoSpring.aprendendoSpring.dto.CredenciaisDTO;
-import com.AprendoSpring.aprendendoSpring.dto.TokenDTO;
 import com.AprendoSpring.aprendendoSpring.exception.SenhaInvalidaException;
-import com.AprendoSpring.aprendendoSpring.models.Usuario;
-import com.AprendoSpring.aprendendoSpring.repositories.UsuarioRepository;
+import com.AprendoSpring.aprendendoSpring.rest.dto.CredenciaisDTO;
+import com.AprendoSpring.aprendendoSpring.rest.dto.TokenDTO;
 import com.AprendoSpring.aprendendoSpring.security.jwt.JwtService;
 import com.AprendoSpring.aprendendoSpring.services.UserService;
+import com.domains.models.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import io.jsonwebtoken.Jwt;
 
 @RestController
 @RequestMapping("/api/usuario")

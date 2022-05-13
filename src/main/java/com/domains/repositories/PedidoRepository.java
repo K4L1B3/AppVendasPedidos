@@ -1,6 +1,7 @@
-package com.AprendoSpring.aprendendoSpring.repositories;
+package com.domains.repositories;
 
-import com.AprendoSpring.aprendendoSpring.models.Pedido;
+
+import com.domains.models.Pedido;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

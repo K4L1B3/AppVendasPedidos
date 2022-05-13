@@ -1,23 +1,15 @@
 package com.AprendoSpring.aprendendoSpring.services;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
-import com.AprendoSpring.aprendendoSpring.dto.ItemPedidoDTO;
-import com.AprendoSpring.aprendendoSpring.dto.PedidoDTO;
-// import com.AprendoSpring.aprendendoSpring.exception.PedidoServiceExcepetion;
-import com.AprendoSpring.aprendendoSpring.models.Cliente;
-import com.AprendoSpring.aprendendoSpring.models.Item_pedido;
-import com.AprendoSpring.aprendendoSpring.models.Pedido;
-import com.AprendoSpring.aprendendoSpring.models.Produto;
-import com.AprendoSpring.aprendendoSpring.repositories.ClienteRepository;
-import com.AprendoSpring.aprendendoSpring.repositories.Item_pedidoRepository;
-import com.AprendoSpring.aprendendoSpring.repositories.PedidoRepository;
-import com.AprendoSpring.aprendendoSpring.repositories.ProdutoRepository;
+import com.domains.models.Pedido;
+// import com.domains.repositories.ClienteRepository;
+// import com.domains.repositories.Item_pedidoRepository;
+import com.domains.repositories.PedidoRepository;
+// import com.domains.repositories.ProdutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +20,14 @@ public class PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    // @Autowired
+    // private ClienteRepository clienteRepository;
 
-    @Autowired
-    private ProdutoRepository produtoRepository;
+    // @Autowired
+    // private ProdutoRepository produtoRepository;
 
-    @Autowired
-    private Item_pedidoRepository item_pedidoRepository;
+    // @Autowired
+    // private Item_pedidoRepository item_pedidoRepository;
 
     @Transactional
     public Pedido save(Pedido pedido) {

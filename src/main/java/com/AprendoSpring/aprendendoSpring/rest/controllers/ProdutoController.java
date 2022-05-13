@@ -1,12 +1,11 @@
-package com.AprendoSpring.aprendendoSpring.controllers;
+package com.AprendoSpring.aprendendoSpring.rest.controllers;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.AprendoSpring.aprendendoSpring.models.Produto;
 import com.AprendoSpring.aprendendoSpring.services.ProdutoService;
+import com.domains.models.Produto;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
