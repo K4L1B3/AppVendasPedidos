@@ -30,6 +30,8 @@ public class SwaggerConfig {
     // Path para acessar o Swagger:
     // http://localhost:8080/swagger-ui/index.html#/
 
+    
+
     @Bean
     public Docket docket(){
          return new Docket(DocumentationType.SWAGGER_2)
@@ -71,7 +73,7 @@ public class SwaggerConfig {
     private SecurityContext securityContext(){
         return SecurityContext.builder()
                 .securityReferences(defaultAuth())
-                .forPaths(PathSelectors.any())
+                .operationSelector(operationContext -> true)
                 .build();
     }
 
