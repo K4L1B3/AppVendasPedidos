@@ -78,13 +78,6 @@
 			<version>0.9.1</version>
 		</dependency>
 
-		<!-- Swagger UI -->
-		<!-- <dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.8</version>
-		</dependency> -->
-
 		<!-- Swagger 3 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
