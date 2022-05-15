@@ -1,14 +1,12 @@
 # AppVendasPedidos
 
-# KaFlux
-
 <br/>
 <br/>
 <div display="inline" align="center">
 <img src="https://img.shields.io/static/v1?label=Version&message=1.0&color=7159c1&style=for-the-badge&logo=ghost"/>
 <a href="https://github.com/K4L1B3/kaflux/blob/master/LICENSE" text-decoration="none"> <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=7159c1&style=for-the-badge&logo=ghost"/> <a/>
-<img src="https://img.shields.io/static/v1?label=Progress&message=0%&color=7159c1&style=for-the-badge&logo=ghost"/>
-<img src="https://img.shields.io/static/v1?label=Contribution&message=Open&color=7159c1&style=for-the-badge&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label=Progress&message=100%&color=7159c1&style=for-the-badge&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label=Contribution&message=Closed&color=7159c1&style=for-the-badge&logo=ghost"/>
 </div>
 
 <br/>
@@ -17,7 +15,7 @@
 <img src="https://img.shields.io/static/v1?label=Issues&message=0&color=7159c1&style=for-the-badge&logo=ghost"/>
 <img src="https://img.shields.io/static/v1?label=Build Stats&message=0&color=7159c1&style=for-the-badge&logo=ghost"/>
 <img src="https://img.shields.io/static/v1?label=Tests Stats&message=0&color=7159c1&style=for-the-badge&logo=ghost"/>
-<img src="https://img.shields.io/static/v1?label= Project Stats &message=On init&color=FF2D00&style=for-the-badge&logo=ghost"/>
+<img src="https://img.shields.io/static/v1?label= Project Stats &message=All right&color=00FF55&style=for-the-badge&logo=ghost"/>
 </div>
 
 # Index
@@ -54,12 +52,11 @@ This project was made thinking about solving a real pain of business financial m
 
 # Features 
 
-- [ ] Customer registration
-- [ ] Order registration
-- [ ] Inventory management
-- [ ] Cash flow
-- [ ] Monthly and weekly sales margin
-- [ ] Products that sell the most
+- [x] Customer registration
+- [x] Order registration
+- [x] User registration
+- [x] Product registration
+- [x] Delete Product & Cliente
 
 <br/>
 <br/>
@@ -76,34 +73,21 @@ The following tools will be used in building the project:
       * My SQL Driver
       * Validation
       * Lombok
+      * Swagger 3
+      * JJWT
  * MySQL Workbench Data Base
 
-<br/>
-
-**Front-end**
-
-  * ReactJS
-  * JavaScript
-  * HTML
-  * CSS
-  
-<br/>
-<br/>
 
 # Demonstration
-
-
+file:///home/k4l1b3/Pictures/Screenshot_20220515_182429.png![image](https://user-images.githubusercontent.com/45051690/168494453-4d73703c-1818-455b-a5f7-1dbc700d3c41.png)
 
 <br/>
 <br/>
-
-# Instalation
-
-## Prerequisites
-
 ## How to run the application
 
-## Building the terrain
+ Open this URL for acessing Swagger Ui:
+ http://localhost:8080/swagger-ui/index.html#/
+ 
 
 
 <br/>
