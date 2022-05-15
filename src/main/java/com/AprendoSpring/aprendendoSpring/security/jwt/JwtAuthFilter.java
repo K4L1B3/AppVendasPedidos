@@ -31,12 +31,12 @@ public class JwtAuthFilter extends OncePerRequestFilter{
     // Filter chain vai interceptar a requisição e antes de processar a requisição eu estou mandando um usuário
 
     @Override
-    protected void doFilterInternal(
+    protected void doFilterInternal (
         HttpServletRequest request, 
         HttpServletResponse response, 
-        FilterChain filterChain)
+        FilterChain filterChain) 
             throws ServletException, IOException {
-      
+        
         // Pegar o header chamado Authorization que conterá o token
         String authorization = request.getHeader("Authorization");
         
