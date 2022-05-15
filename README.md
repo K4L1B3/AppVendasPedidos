@@ -79,10 +79,11 @@ The following tools will be used in building the project:
 
 
 # Demonstration
-file:///home/k4l1b3/Pictures/Screenshot_20220515_182429.png![image](https://user-images.githubusercontent.com/45051690/168494453-4d73703c-1818-455b-a5f7-1dbc700d3c41.png)
+[image](https://user-images.githubusercontent.com/45051690/168494453-4d73703c-1818-455b-a5f7-1dbc700d3c41.png)
 
 <br/>
 <br/>
+
 ## How to run the application
 
  Open this URL for acessing Swagger Ui:
