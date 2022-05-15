@@ -79,7 +79,7 @@ The following tools will be used in building the project:
 
 
 # Demonstration
-[image](https://user-images.githubusercontent.com/45051690/168494453-4d73703c-1818-455b-a5f7-1dbc700d3c41.png)
+(https://user-images.githubusercontent.com/45051690/168494453-4d73703c-1818-455b-a5f7-1dbc700d3c41.png)
 
 <br/>
 <br/>
