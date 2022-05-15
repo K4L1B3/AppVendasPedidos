@@ -24,7 +24,6 @@
  <a href="#features">Features</a> • 
  <a href="#technologies">Technologies</a> • 
  <a href="#demonstration">Demonstration</a> •  
- <a href="#instalation">Instalation</a> •
  <a href="#contribution">Contribution</a> •  
  <a href="#autor">Autor</a>
 </p>
@@ -34,18 +33,13 @@
 
 # About
 
-**In short: Inventory and cash flow management software for your small business.**
+
 
 
 * **What is the project?**
 
-This software was made for the initial management of a skewer company, however it can be used by other types of companies.
+This project is made for my knowledge in the spring framework in which I can simulate login and user registration, also having the possibility of orders in which to create users, change products or orders. So I used spring security and Swagger.
  
-<br/>
- 
-* **Why this project is useful?**
-
-This project was made thinking about solving a real pain of business financial management in my father's family business and as I have knowledge in programming, financial and administrative management I decided to automate things in the company to reduce my time and increase the company's productivity thus reducing the expense with employees and, at the same time, being able to have a useful and reliable financial analysis for the company without additional costs with software paid in the market.
 
 <br/>
 <br/>
