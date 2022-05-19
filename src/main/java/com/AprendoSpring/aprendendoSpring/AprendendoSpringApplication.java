@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 // Spring Web MVC para rodar o Swagger
 @EnableWebMvc
 @SpringBootApplication
+// @ActiveProfiles("dev")
 public class AprendendoSpringApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
